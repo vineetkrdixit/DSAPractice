@@ -96,3 +96,54 @@ function narcissistic(value) {
   return sum===value
 }
 narcissistic(153)
+
+// Take 2 strings s1 and s2 including only letters from a to z. Return a new sorted string (alphabetical ascending), the longest possible, containing distinct letters - each taken only once - coming from s1 or s2.
+
+// Examples:
+// a = "xyaabbbccccdefww"
+// b = "xxxxyyyyabklmopq"
+// longest(a, b) -> "abcdefklmopqwxy"
+
+// a = "abcdefghijklmnopqrstuvwxyz"
+// longest(a, a) -> "abcdefghijklmnopqrstuvwxyz"
+
+function longest(s1, s2) {
+    const newString=s1+s2
+    const newArray=[]
+    newString.split("").map((item)=>{
+    if(newArray.includes(item)){
+    return
+    }else{
+    newArray.push(item)}
+    })
+    return newArray.sort().join("")
+    }
+
+
+//     Implement a function that accepts 3 integer values a, b, c. The function should return true if a triangle can be built with the sides of given length and false in any other case.
+
+// (In this case, all triangles must have surface greater than 0 to be accepted).
+
+// Examples:
+
+// Input -> Output
+// 1,2,2 -> true
+// 4,2,3 -> true
+// 2,2,2 -> true
+// 1,2,3 -> false
+// -5,1,3 -> false
+// 0,2,3 -> false
+// 1,2,9 -> false 
+
+    function isTriangle(a,b,c){
+        if(a<1||b<1||c<1 ){
+        return false
+        }
+        else if(a+b>c && b+c>a && c+a>b){
+        console.log("in if")
+        return true
+        }else{
+        console.log("in else")
+        return false 
+        }
+        }
