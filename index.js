@@ -210,7 +210,7 @@ function longest(s1, s2) {
           if(arr[i].charCodeAt(0)>64 && arr[i].charCodeAt(0)<91 || arr[i].charCodeAt(0)>96 && arr[i].charCodeAt(0)<123 ){
           
           const charCode=arr[i].charCodeAt(0) + 13
-          console.log( charCode)
+        //   console.log( charCode)
           console.log(String.fromCharCode(charCode))
           newarr.push(String.fromCharCode(charCode))
           }
