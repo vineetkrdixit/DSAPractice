@@ -300,3 +300,33 @@ function comp(array1 = [], array2 = []){
     return true
  }
  
+//  The rgb function is incomplete. Complete it so that passing in RGB decimal values will result in a hexadecimal representation being returned. Valid decimal values for RGB are 0 - 255. Any values that fall out of that range must be rounded to the closest valid value.
+
+// Note: Your answer should always be 6 characters long, the shorthand with 3 will not work here.
+
+// Examples (input --> output):
+// 255, 255, 255 --> "FFFFFF"
+// 255, 255, 300 --> "FFFFFF"
+// 0, 0, 0       --> "000000"
+// 148, 0, 211   --> "9400D3"
+
+function rgb(r, g, b) {
+    let hexValues=[0,1,2,3,4,5,6,7,8,9,"A","B","C","D","E","F"]
+    let hexString=``
+  
+    const calCulateHex=(r)=>{
+        if(r<0){
+            r=0
+        }else if(r>255){
+            r=255
+        }
+       let q = Math.trunc(r/16)
+       let rem = (r%16)
+       hexString=hexString+(`${hexValues[q]}${hexValues[rem]}`)
+ 
+    }
+     calCulateHex(r)
+     calCulateHex(g)
+     calCulateHex(b)
+    return hexString
+ }
